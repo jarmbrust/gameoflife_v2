@@ -18,8 +18,8 @@ const CellGrid = () => {
       <Wrapper>
         hi
         <GridWrapper>
-          <Grid cellNum={3}>
-            {createCell(3)}
+          <Grid cellNum={4}>
+            {createCell(4)}
           </Grid>
         </GridWrapper>
       </Wrapper>
@@ -33,18 +33,16 @@ const Wrapper = styled.div`
 `;
 
 const GridWrapper = styled.div`
-  max-width: 64px;
-  margin: 1px;
+  max-width: 86px;
+  margin: 10px;
 `;
 
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(${props=> props.cellNum}, 1fr); 
   grid-template-rows: repeat(${props=> props.cellNum}, 1fr);
-  ${'' /* grid-row-end: 3; */}
   background-color: white;
   grid-gap: 0;
-  
 `;
 
 const Cell = styled.div`
