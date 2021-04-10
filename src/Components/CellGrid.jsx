@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import styled from 'styled-components'
+import Cell from './Cell';
 
 const CellGrid = () => {
 
-  const [gridBoxes, setGridBoxes] = useState('');
+  const [gridBoxes, setGridBoxes] = useState(Array(16).fill(null));
+  
 
   const createCell = cells => {
     let gridArray = [];
     for (let i = 0; i < cells * cells; i++) {
-      gridArray.push(<Cell key={i} className="square"></Cell>)
+      gridArray.push(<Cell key={i} className={`square${i}`} id={`square${i}`}></Cell>)
     }
     return gridArray;
   }
@@ -41,15 +43,7 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(${props=> props.cellNum}, 1fr); 
   grid-template-rows: repeat(${props=> props.cellNum}, 1fr);
-  background-color: white;
   grid-gap: 0;
 `;
-
-const Cell = styled.div`
-  border: 1px solid;
-  height: 20px;
-  width: 20px;
-`;
-
 
 export default CellGrid;
