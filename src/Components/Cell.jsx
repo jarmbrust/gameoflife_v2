@@ -10,7 +10,6 @@ const Cell = ({ id, isActive }) => {
     return active;
   }
 
-
   return (
     <>
       <CellBody 
